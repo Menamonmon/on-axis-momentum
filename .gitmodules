@@ -1,0 +1,3 @@
+[submodule "SpacecraftDynamicsControlRepo"]
+	path = SpacecraftDynamicsControlRepo
+	url = https://github.com/BAmercury/SpacecraftDynamicsControl.git
