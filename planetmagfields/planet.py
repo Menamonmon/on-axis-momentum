@@ -33,12 +33,6 @@ class planet:
         self.theta = self.th2D[0, :]
         self.r = r
 
-    def calcBr(self, r):
-        p2D, th2D, Br, dipTheta, dipPhi = getBr(
-            datDir=self.datDir, planet=self.name, r=r, info=False
-        )
-        return Br
-
     def plot(self, r=1, levels=30, cmap="RdBu_r", proj="Mollweide"):
         plt.figure(figsize=(12, 6.75))
 
@@ -48,7 +42,7 @@ class planet:
             )
         else:
             self.p2D, self.th2D, self.Br, self.dipTheta, self.dipPhi = getBr(
-                datDir=self.datDir, planet=self.name, r=r, info=False
+                self, r=r, info=False
             )
             self.r = r
             ax, cbar = plotSurf(
